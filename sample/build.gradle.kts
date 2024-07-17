@@ -41,9 +41,11 @@ android {
 
 dependencies {
     implementation(project(":transparentvideo"))
+    implementation(project(":alpha-movie"))
 
     implementation("androidx.activity:activity-compose:1.7.1")
     implementation("androidx.compose.ui:ui:1.4.3")
     implementation("androidx.compose.foundation:foundation:1.4.3")
     implementation("androidx.compose.foundation:foundation-layout:1.4.3")
+    implementation("androidx.appcompat:appcompat:1.6.1")
 }

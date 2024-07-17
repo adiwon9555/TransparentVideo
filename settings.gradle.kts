@@ -17,3 +17,4 @@ rootProject.name = "TransparentVideo"
 
 include(":transparentvideo")
 include(":sample")
+include (":alpha-movie")

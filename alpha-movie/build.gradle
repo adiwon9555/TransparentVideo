@@ -1,0 +1,76 @@
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+}
+
+ext {
+    bintrayRepo = 'alpha-movie'
+    bintrayName = 'alpha-movie'
+
+    publishedGroupId = 'com.alphamovie.library'
+    libraryName = 'Alpha Movie'
+    artifact = 'alpha-movie'
+
+    libraryDescription = 'Android video player with alpha channel support'
+
+    siteUrl = 'https://github.com/pavelsemak/alpha-movie'
+    gitUrl = 'https://github.com/pavelsemak/alpha-movie.git'
+
+    libraryVersion = '1.2.1'
+
+    developerId = 'pavelsemak'
+    developerName = 'Pavel Semak'
+    developerEmail = 'pavel.semak.a@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    namespace = "com.alphamovie.library"
+    compileSdk = 33
+
+    defaultConfig {
+        minSdk = 23
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.2"
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+}
+
+dependencies {
+    implementation("androidx.appcompat:appcompat:1.6.1")
+}
+
+
+
